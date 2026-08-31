@@ -1,0 +1,2 @@
+.header { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; }
+.pageTitle { font-size: var(--text-2xl); }

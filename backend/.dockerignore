@@ -1,0 +1,9 @@
+# segredos NUNCA entram na imagem
+.env
+.env.*
+!.env.example
+
+node_modules
+dist
+*.log
+.git

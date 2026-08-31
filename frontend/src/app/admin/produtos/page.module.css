@@ -1,0 +1,38 @@
+.header { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; }
+.pageTitle { font-size: var(--text-2xl); }
+
+.loading, .empty { color: var(--text-muted); padding: var(--sp-10) 0; text-align: center; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-5);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardImage { position: relative; width: 100%; aspect-ratio: 1 / 1; background: var(--bg-alt); }
+
+.cardBody { padding: var(--sp-4); display: flex; flex-direction: column; gap: var(--sp-3); flex: 1; }
+.cardTitle { font-size: var(--text-md); }
+.cardMeta { font-size: var(--text-xs); color: var(--text-muted); margin-top: 2px; }
+.cardPrice { font-family: var(--font-title); font-weight: 700; font-size: var(--text-lg); margin-top: var(--sp-1); }
+
+.cardActions { display: flex; gap: var(--sp-2); }
+.deleteBtn {
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--error-border);
+  color: var(--error);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+.deleteBtn:hover:not(:disabled) { background: var(--error-bg); }
+.deleteBtn:disabled { opacity: 0.5; }

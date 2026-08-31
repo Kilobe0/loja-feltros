@@ -1,0 +1,25 @@
+# Placeholder de deploy — ajuste app/domínios quando a loja tiver conta própria
+# no Fly.io. Nada aqui foi testado em produção ainda.
+app = 'loja-feltros-api'
+primary_region = 'gru' # São Paulo
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  PORT = '3001'
+  FRONTEND_URL = 'https://loja-feltros.pages.dev'
+  PUBLIC_API_URL = 'https://loja-feltros-api.fly.dev'
+  CHECKOUT_RETURN_URL = 'https://loja-feltros.pages.dev/checkout/retorno'
+  MELHORENVIO_SANDBOX = 'true'
+
+[http_service]
+  internal_port = 3001
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  size = 'shared-cpu-1x'
+  memory = '256mb'

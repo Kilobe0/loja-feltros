@@ -1,0 +1,13 @@
+.loading { min-height: 60vh; }
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-20) var(--sp-6);
+  text-align: center;
+  min-height: 50vh;
+  justify-content: center;
+}
+.notFound p { color: var(--text-muted); }

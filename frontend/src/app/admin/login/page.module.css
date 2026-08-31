@@ -1,0 +1,27 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-alt);
+  padding: var(--sp-4);
+}
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-8);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.brand { display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; }
+.brandName { font-family: var(--font-title); font-size: var(--text-xl); font-weight: 700; }
+.brandSub { font-size: var(--text-xs); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+.form { display: flex; flex-direction: column; gap: var(--sp-4); }
+.error { font-size: var(--text-sm); color: var(--error); }
