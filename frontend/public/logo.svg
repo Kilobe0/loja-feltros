@@ -2,6 +2,11 @@
 <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1916 911">
   <defs>
     <style>
+      @font-face {
+        font-family: 'NotablyAbsent-Regular';
+        src: url('/fonts/NotablyAbsent-Regular.ttf') format('truetype');
+      }
+
       .cls-1, .cls-2 {
         fill: #602a80;
       }
