@@ -2,6 +2,7 @@
 import { Suspense, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { login } from '@/lib/api';
+import { SITE_NAME } from '@/lib/site';
 import styles from './page.module.css';
 
 function AdminLoginInner() {
@@ -38,7 +39,7 @@ function AdminLoginInner() {
     <div className={styles.page}>
       <div className={styles.card}>
         <div className={styles.brand}>
-          <span className={styles.brandName}>Loja de Feltros</span>
+          <span className={styles.brandName}>{SITE_NAME}</span>
           <span className={styles.brandSub}>Painel Administrativo</span>
         </div>
 

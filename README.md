@@ -1,8 +1,9 @@
-# Loja de Feltros
+# Aline Valença
 
-Fundação inicial de uma loja virtual de produtos artesanais de feltro (chaveiros,
-bonecos, enfeites e outros itens variados). "Loja de Feltros" é um nome
-placeholder — a marca/identidade visual definitiva ainda precisa ser definida.
+Fundação inicial da loja virtual da marca **Aline Valença**, de produtos
+artesanais de feltro (chaveiros, bonecos, enfeites e outros itens variados).
+Nome e paleta de cores (roxo `#602A80` / `#915EB8`) vêm do logo da marca em
+`logo.svg`, usado também em `frontend/public/logo.svg` e `favicon.svg`.
 
 ## Relação com o projeto andrevendas
 
@@ -91,9 +92,6 @@ O frontend espera o backend em `http://localhost:3001` por padrão
 
 ## O que falta
 
-- **Nome e identidade visual da loja** — "Loja de Feltros" e a paleta usada
-  no frontend são placeholders. A paleta é neutra e amigável (terracota
-  sobre bege) para ser fácil de trocar depois.
 - **Contas reais** — MongoDB Atlas, Cloudinary, Mercado Pago (Checkout Pro) e
   Melhor Envio precisam ser criadas pela dona da loja; sem isso, upload de
   imagem, pagamento e frete não funcionam (o catálogo e o carrinho funcionam

@@ -1,8 +1,10 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCart } from '@/lib/cart';
 import ThemeToggle from './ThemeToggle';
 import styles from './Header.module.css';
+import { SITE_NAME } from '@/lib/site';
 
 export default function Header() {
   const { count, openCart } = useCart();
@@ -10,8 +12,8 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
-        <Link href="/" className={styles.logo} aria-label="Loja de Feltros — página inicial">
-          Loja de Feltros
+        <Link href="/" className={styles.logo} aria-label={`${SITE_NAME} — página inicial`}>
+          <Image src="/logo.svg" alt={SITE_NAME} width={168} height={80} priority className={styles.logoImg} />
         </Link>
 
         <div className={styles.actions}>

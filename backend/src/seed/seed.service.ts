@@ -25,13 +25,13 @@ export class SeedService implements OnModuleInit {
   private async seed() {
     try {
       await this.authService.createAdmin(
-        'Loja de Feltros',
+        'Aline Valença',
         process.env.ADMIN_EMAIL || 'admin@lojafeltros.com',
         process.env.ADMIN_PASSWORD || 'admin123',
       );
 
       const categories = await this.seedCategories();
-      await this.seedExampleProduct(categories[0]);
+      await this.seedExampleProducts(categories);
 
       this.logger.log('✅ Seed concluído com sucesso');
     } catch (err) {
@@ -55,27 +55,76 @@ export class SeedService implements OnModuleInit {
     return docs;
   }
 
-  // Produto de exemplo opcional, só para o catálogo não aparecer vazio no
+  // Produtos de exemplo opcionais, só para o catálogo não aparecer vazio no
   // primeiro acesso. A mãe do usuário pode editar ou remover pelo admin.
-  private async seedExampleProduct(category: CategoryDocument): Promise<void> {
-    const slug = 'chaveiro-gatinho-de-feltro';
-    const existing = await this.productModel.findOne({ slug }).exec();
-    if (existing) return;
+  private async seedExampleProducts(categories: CategoryDocument[]): Promise<void> {
+    const [chaveiros, bonecos, enfeites] = categories;
+    const examples = [
+      {
+        title: 'Chaveiro Gatinho de Feltro',
+        slug: 'chaveiro-gatinho-de-feltro',
+        description: 'Chaveiro artesanal em feltro, feito à mão.',
+        attributes: 'Feltro 100% poliéster, enchimento fiberfill',
+        dimensions: '8 x 6 x 2 cm',
+        weight: 0.02,
+        price: 25,
+        quantity: 5,
+        category: chaveiros,
+      },
+      {
+        title: 'Chaveiro Coelhinho de Feltro',
+        slug: 'chaveiro-coelhinho-de-feltro',
+        description: 'Chaveiro artesanal em feltro, feito à mão.',
+        attributes: 'Feltro 100% poliéster, enchimento fiberfill',
+        dimensions: '8 x 7 x 2 cm',
+        weight: 0.02,
+        price: 25,
+        quantity: 8,
+        category: chaveiros,
+      },
+      {
+        title: 'Boneca de Pano em Feltro',
+        slug: 'boneca-de-pano-em-feltro',
+        description: 'Boneca artesanal em feltro, feita à mão.',
+        attributes: 'Feltro 100% poliéster, enchimento fiberfill',
+        dimensions: '25 x 12 x 5 cm',
+        weight: 0.15,
+        price: 89,
+        quantity: 3,
+        category: bonecos,
+      },
+      {
+        title: 'Enfeite de Porta Coração',
+        slug: 'enfeite-de-porta-coracao',
+        description: 'Enfeite de porta em feltro, feito à mão.',
+        attributes: 'Feltro 100% poliéster, enchimento fiberfill',
+        dimensions: '20 x 20 x 4 cm',
+        weight: 0.1,
+        price: 45,
+        quantity: 6,
+        category: enfeites,
+      },
+    ];
 
-    await this.productModel.create({
-      title: 'Chaveiro Gatinho de Feltro',
-      slug,
-      description: 'Chaveiro artesanal em feltro, feito à mão.',
-      attributes: 'Feltro 100% poliéster, enchimento fiberfill',
-      dimensions: '8 x 6 x 2 cm',
-      weight: 0.02,
-      price: 25,
-      quantity: 5,
-      status: ProductStatus.AVAILABLE,
-      featured: true,
-      images: [],
-      variants: [],
-      category: category._id,
-    });
+    for (const example of examples) {
+      const existing = await this.productModel.findOne({ slug: example.slug }).exec();
+      if (existing) continue;
+
+      await this.productModel.create({
+        title: example.title,
+        slug: example.slug,
+        description: example.description,
+        attributes: example.attributes,
+        dimensions: example.dimensions,
+        weight: example.weight,
+        price: example.price,
+        quantity: example.quantity,
+        status: ProductStatus.AVAILABLE,
+        featured: false,
+        images: [],
+        variants: [],
+        category: example.category._id,
+      });
+    }
   }
 }

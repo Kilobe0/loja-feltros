@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   description: 'Produtos artesanais de feltro — chaveiros, bonecos e enfeites feitos à mão.',
   keywords: ['feltro', 'artesanato', 'chaveiros de feltro', 'bonecos de feltro', 'enfeites de feltro'],
   alternates: { canonical: './' },
+  icons: { icon: '/favicon.svg' },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',

@@ -14,10 +14,14 @@
 }
 
 .logo {
-  font-family: var(--font-title);
-  font-size: var(--text-lg);
-  font-weight: 700;
-  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logoImg {
+  height: 40px;
+  width: auto;
 }
 
 .actions {

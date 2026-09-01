@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { LayoutDashboard, Inbox, Package, Plus, LogOut } from 'lucide-react';
+import { SITE_NAME } from '@/lib/site';
 import styles from './AdminShell.module.css';
 
 const NAV = [
@@ -40,7 +41,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
     <div className={styles.layout}>
       <aside className={styles.sidebar}>
         <div className={styles.sidebarBrand}>
-          <Link href="/admin/dashboard" className={styles.brandLink}>Loja de Feltros</Link>
+          <Link href="/admin/dashboard" className={styles.brandLink}>{SITE_NAME}</Link>
           <span>Admin</span>
         </div>
         <nav className={styles.sidebarNav}>
@@ -58,7 +59,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
 
       <header className={styles.topbar}>
         <Link href="/admin/dashboard" className={styles.topbarBrand}>
-          Loja de Feltros <span>Admin</span>
+          {SITE_NAME} <span>Admin</span>
         </Link>
         <button onClick={logout} className={styles.topbarLogout} aria-label="Sair">
           <LogOut size={18} strokeWidth={1.75} />

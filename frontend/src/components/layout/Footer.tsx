@@ -1,15 +1,15 @@
-import { WHATSAPP_URL } from '@/lib/site';
+import { WHATSAPP_URL, SITE_NAME } from '@/lib/site';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
-        <span className={styles.brand}>Loja de Feltros</span>
+        <span className={styles.brand}>{SITE_NAME}</span>
         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
           <WhatsappIcon /> Fale conosco no WhatsApp
         </a>
-        <p className={styles.copy}>© {new Date().getFullYear()} Loja de Feltros. Todos os direitos reservados.</p>
+        <p className={styles.copy}>© {new Date().getFullYear()} {SITE_NAME}. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

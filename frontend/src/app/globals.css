@@ -18,13 +18,13 @@
   --text-faint:     #ACA095;
   --text-inverse:   #FFFFFF;
 
-  --accent:         #D97757;   /* terracota — quente e amigável */
-  --accent-hover:   #C3623F;
-  --accent-soft:    #F4D9CC;
+  --accent:         #602A80;   /* roxo da marca (Aline Valença) */
+  --accent-hover:   #4C2266;
+  --accent-soft:    #EBDFF3;
 
   --border:         #E7DDD1;
   --border-strong:  #D8CBBB;
-  --border-focus:   #D97757;
+  --border-focus:   #602A80;
 
   --success:        #4C7A52;
   --success-bg:     rgba(76, 122, 82, 0.10);
@@ -44,7 +44,7 @@
 
   --scrim:          rgba(46, 38, 33, 0.45);
   --skeleton-hi:    #EFE6DA;
-  --selection:      rgba(217, 119, 87, 0.22);
+  --selection:      rgba(96, 42, 128, 0.22);
 
   --font-title: var(--font-quicksand), 'Quicksand', system-ui, sans-serif;
   --font-body:  var(--font-inter), 'Inter', system-ui, sans-serif;
@@ -87,8 +87,8 @@
     --text: #F3EAE1; --text-secondary: #CBBEB1;
     --text-muted: #9C8F82; --text-faint: #726558;
     --text-inverse: #201A16;
-    --accent: #E28A67; --accent-hover: #EA9A79; --accent-soft: #4A3529;
-    --border: #3A322B; --border-strong: #493F36; --border-focus: #E28A67;
+    --accent: #A876C9; --accent-hover: #BA8EDA; --accent-soft: #3A2A4A;
+    --border: #3A322B; --border-strong: #493F36; --border-focus: #A876C9;
     --skeleton-hi: #342C25;
     --scrim: rgba(0,0,0,0.55);
   }
@@ -100,8 +100,8 @@
   --text: #F3EAE1; --text-secondary: #CBBEB1;
   --text-muted: #9C8F82; --text-faint: #726558;
   --text-inverse: #201A16;
-  --accent: #E28A67; --accent-hover: #EA9A79; --accent-soft: #4A3529;
-  --border: #3A322B; --border-strong: #493F36; --border-focus: #E28A67;
+  --accent: #A876C9; --accent-hover: #BA8EDA; --accent-soft: #3A2A4A;
+  --border: #3A322B; --border-strong: #493F36; --border-focus: #A876C9;
   --skeleton-hi: #342C25;
   --scrim: rgba(0,0,0,0.55);
 }
